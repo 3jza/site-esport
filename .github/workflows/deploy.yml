@@ -37,6 +37,16 @@ jobs:
           GITHUB_PAGES: 'true'
           NODE_ENV: production
 
+      - name: Verify base path in HTML
+        run: |
+          if grep -q '/site-esport/' dist/index.html; then
+            echo "✅ Base path correctly applied in HTML"
+          else
+            echo "❌ Base path NOT found in HTML - checking content:"
+            head -100 dist/index.html | grep -E '(src=|href=)'
+            exit 1
+          fi
+
       - name: Add .nojekyll to dist
         run: touch dist/.nojekyll
 
