@@ -70,6 +70,16 @@
         <div class="loading-spinner"></div>
       </div>
     </div>
+    <script type="module">
+      // Fallback: cacher le loader après un délai maximum
+      setTimeout(() => {
+        const loader = document.getElementById('initial-loader');
+        if (loader) {
+          loader.style.opacity = '0';
+          setTimeout(() => loader.remove(), 500);
+        }
+      }, 5000);
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
