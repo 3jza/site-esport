@@ -1,0 +1,124 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Variables CSS personnalisées */
+:root {
+  --esport-black: #000000;
+  --esport-purple: #7C3AED;
+  --esport-white: #FFFFFF;
+}
+
+/* Styles de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--esport-black);
+  color: var(--esport-white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Scrollbar personnalisée */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--esport-purple);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8B5CF6;
+}
+
+/* Classes utilitaires personnalisées */
+.text-gradient {
+  background: linear-gradient(135deg, var(--esport-purple) 0%, #A855F7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-gaming {
+  @apply bg-esport-purple hover:bg-esport-light-purple text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95;
+}
+
+.btn-gaming:hover {
+  box-shadow: 0 0 20px rgba(124, 58, 237, 0.5);
+}
+
+.card-gaming {
+  @apply bg-esport-gray-900 border border-esport-gray-700 rounded-lg p-6 transition-all duration-300 hover:border-esport-purple hover:shadow-lg;
+}
+
+.card-gaming:hover {
+  box-shadow: 0 10px 30px rgba(124, 58, 237, 0.2);
+}
+
+/* Animations personnalisées */
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}
+
+.loading-shimmer {
+  background: linear-gradient(90deg, #1F2937 25%, #374151 50%, #1F2937 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Responsive design helpers */
+@media (max-width: 768px) {
+  .mobile-padding {
+    @apply px-4;
+  }
+}
+
+/* Focus states pour l'accessibilité */
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--esport-purple);
+  outline-offset: 2px;
+}
+
+/* Styles pour les badges */
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+}
+
+.badge-primary {
+  @apply bg-esport-purple text-white;
+}
+
+.badge-secondary {
+  @apply bg-esport-gray-700 text-esport-gray-200;
+}
+
+.badge-success {
+  @apply bg-green-600 text-white;
+}
+
+.badge-warning {
+  @apply bg-yellow-600 text-white;
+}

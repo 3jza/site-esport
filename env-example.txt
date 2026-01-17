@@ -1,0 +1,25 @@
+# Configuration Supabase
+VITE_SUPABASE_URL=https://pxcwnhrxxrgujqnosvty.supabase.co
+VITE_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InB4Y3duaHJ4eHJndWpxbm9zdnR5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE2MzkzMDQsImV4cCI6MjA3NzIxNTMwNH0.TTdp-1DG3xuUch7s4gW7Pgg6rOJ2uauAWuYWEgXoZHQ
+
+# Configuration de l'application
+VITE_APP_NAME=EducArma Esport
+VITE_APP_VERSION=1.0.0
+VITE_APP_URL=http://localhost:5173
+
+# Mode de développement (development, production, test)
+VITE_NODE_ENV=development
+
+# Configuration des uploads (optionnel)
+VITE_MAX_FILE_SIZE=5242880
+VITE_ALLOWED_FILE_TYPES=image/jpeg,image/png,image/webp
+
+# Configuration des features (optionnel)
+VITE_ENABLE_ANALYTICS=false
+VITE_ENABLE_SENTRY=false
+
+# Instructions :
+# 1. Copiez ce fichier et renommez-le en ".env" 
+# 2. Remplacez les valeurs par vos vraies clés Supabase
+# 3. Le fichier .env sera automatiquement ignoré par git
+
