@@ -43,8 +43,11 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 }
 
 const App: React.FC = () => {
-  // Base path pour GitHub Pages
-  const basename = import.meta.env.GITHUB_PAGES ? '/site-esport' : '/'
+  // Base path pour GitHub Pages - détection automatique
+  // Si l'URL contient 'github.io', on utilise le base path
+  const isGitHubPages = window.location.hostname.includes('github.io') || 
+                        window.location.pathname.startsWith('/site-esport')
+  const basename = isGitHubPages ? '/site-esport' : '/'
   
   return (
     <Router basename={basename}>
