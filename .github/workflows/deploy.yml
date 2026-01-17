@@ -34,7 +34,8 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          GITHUB_PAGES: true
+          GITHUB_PAGES: 'true'
+          NODE_ENV: production
 
       - name: Add .nojekyll to dist
         run: touch dist/.nojekyll

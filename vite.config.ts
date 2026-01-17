@@ -5,8 +5,11 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Déterminer le base path : toujours /site-esport/ pour la production sur GitHub Pages
-  // En mode production, on utilise le base path GitHub Pages
-  const base = process.env.GITHUB_PAGES === 'true' || mode === 'production' ? '/site-esport/' : '/'
+  // Vérifier si GITHUB_PAGES est défini (peut être 'true', true, ou toute autre valeur)
+  const isGitHubPages = !!process.env.GITHUB_PAGES || mode === 'production'
+  const base = isGitHubPages ? '/site-esport/' : '/'
+  
+  console.log('Vite config - GITHUB_PAGES:', process.env.GITHUB_PAGES, 'mode:', mode, 'base:', base)
   
   return {
     plugins: [react()],
