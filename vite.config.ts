@@ -3,13 +3,13 @@ import react from '@vitejs/plugin-react'
 import path from 'path'
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => {
-  // Déterminer le base path : toujours /site-esport/ pour la production sur GitHub Pages
-  // Vérifier si GITHUB_PAGES est défini (peut être 'true', true, ou toute autre valeur)
-  const isGitHubPages = !!process.env.GITHUB_PAGES || mode === 'production'
-  const base = isGitHubPages ? '/site-esport/' : '/'
+export default defineConfig(({ mode, command }) => {
+  // Base path pour GitHub Pages
+  // En mode build (production), toujours utiliser /site-esport/
+  // En mode dev, utiliser / pour le développement local
+  const base = command === 'build' ? '/site-esport/' : '/'
   
-  console.log('Vite config - GITHUB_PAGES:', process.env.GITHUB_PAGES, 'mode:', mode, 'base:', base)
+  console.log('Vite config - command:', command, 'mode:', mode, 'base:', base)
   
   return {
     plugins: [react()],
