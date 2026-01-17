@@ -43,8 +43,11 @@ const PublicRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 }
 
 const App: React.FC = () => {
+  // Base path pour GitHub Pages
+  const basename = import.meta.env.GITHUB_PAGES ? '/site-esport' : '/'
+  
   return (
-    <Router>
+    <Router basename={basename}>
       <div className="App">
         <AnimatePresence mode="wait">
           <Routes>
