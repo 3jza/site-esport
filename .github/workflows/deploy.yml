@@ -1,4 +1,4 @@
-name: Build and Deploy
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -35,6 +35,9 @@ jobs:
         run: npm run build
         env:
           GITHUB_PAGES: true
+
+      - name: Add .nojekyll to dist
+        run: touch dist/.nojekyll
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
