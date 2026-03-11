@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { PiBrowsers } from 'react-icons/pi'
 import { 
   Trophy, 
   Users, 
@@ -136,7 +137,7 @@ const Home: React.FC = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <Target size={24} />
+                      <PiBrowsers size={24} />
                       <span>Voir les défis</span>
                       <ChevronRight size={20} />
                     </motion.button>
