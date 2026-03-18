@@ -1,0 +1,9 @@
+{
+  "name": "Section eSport",
+  "short_name": "eSport",
+  "icons": [],
+  "theme_color": "#7C3AED",
+  "background_color": "#000000",
+  "display": "standalone",
+  "start_url": "/site-esport/"
+}
